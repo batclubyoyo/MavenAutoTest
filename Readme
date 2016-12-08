@@ -22,6 +22,6 @@
      * Point of using Maven
      * 1. Testcase file need to be placed in test folder, otherwise Maven can't detect the dependencies, import of testcase source code will error
      * 2. Add testng's xml configuration file in pom.xml, using Maven's runner to run it, when you want to run Maven in common line (mvn compile, mvn test...)
-     * 3. Maven's runner is maven-surefire-plugin, specify it in pom with <build><plugins><plugin> tags
+     * 3. Maven's runner is maven-surefire-plugin, specify it in pom with <build><plugins><plugin> tags, with specification version
      * 4. When using log4j2 to record, it's configuration log4j2.xml must to be placed in main/java/resources folder
      */

@@ -5,9 +5,12 @@ import com.autotest.utils.LogRecord;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
-//import org.apache.poi.xssf.usermodel.XSSFCell;
-//import org.apache.poi.xssf.usermodel.XSSFSheet;
-//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTCell;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -24,8 +27,10 @@ public class Excel {
 
     private String excel_file = "src/com/auto/data/testcase.xlsx";
 
-    private Workbook workbook = null;
-    private Sheet sheet = null;
+//    private Workbook workbook = null;
+//    private Sheet sheet = null;
+    private XSSFWorkbook workbook = null;
+    private XSSFSheet sheet = null;
 
     public Excel(Object sheet) throws Exception {
         clear();
@@ -45,16 +50,17 @@ public class Excel {
     private void openExcel() {
         try {
             FileInputStream inputStream = new FileInputStream(this.excel_file);
-//            this.workbook = new Workbook(inputStream);
-            workbook = WorkbookFactory.create(inputStream);
+            this.workbook = new XSSFWorkbook(inputStream);
+//            workbook = WorkbookFactory.create(inputStream);
             inputStream.close();
         } catch (FileNotFoundException e) {
-            logger.error("Not found the excel file!\n" + e.getMessage());
-        } catch (InvalidFormatException e) {
             logger.error("Not found the excel file!\n" + e.getMessage());
         } catch (IOException e) {
             logger.error("Open file stream error!\n" + e.getMessage());
         }
+//        catch (InvalidFormatException e) {
+//            logger.error("Not found the excel file!\n" + e.getMessage());
+//        }
     }
 
     private void openSheet(Object sheet) {
@@ -101,22 +107,57 @@ public class Excel {
 
     public String readCell(int row, int column) {
         String cellContent;
-        Cell cell = this.sheet.getRow(row).getCell(column);
+        XSSFCell cell = this.sheet.getRow(row).getCell(column);
         if (cell == null) {
             cellContent = "null";
             return cellContent;
         }
 
-        switch (cell.getCellType()) {
-            case Cell.CELL_TYPE_BLANK:
+//        switch (cell.getCellType()) {
+//            case Cell.CELL_TYPE_BLANK:
+////                System.out.print("I'm blank: ");
+//                cellContent = "blank";
+//                break;
+//            case Cell.CELL_TYPE_BOOLEAN:
+////                System.out.print("I'm boolean: ");
+//                cellContent = Boolean.toString(cell.getBooleanCellValue());
+//                break;
+//            case Cell.CELL_TYPE_NUMERIC: // normal number, Date are here
+//                if (DateUtil.isCellDateFormatted(cell)) {
+////                    System.out.print("I'm date: ");
+//                    cellContent = new SimpleDateFormat("yyyy-MM-dd").format(cell.getDateCellValue()).toString();
+//                } else {
+////                    System.out.print("I'm numeric: ");
+//                    cellContent = String.valueOf(cell.getNumericCellValue());
+//                }
+//                break;
+//            case Cell.CELL_TYPE_FORMULA:
+////                System.out.print("I'm formula: ");
+//                cell.setCellType(Cell.CELL_TYPE_STRING);
+//                cellContent = cell.getStringCellValue();
+//                break;
+//            case Cell.CELL_TYPE_ERROR:
+////                System.out.print("I'm error: ");
+//                cellContent = "error";
+//                break;
+//            default:
+//                System.out.print("I'm String: ");
+//                cellContent = cell.getStringCellValue().trim();
+//                break;
+//        }
+
+        CellType cellType = cell.getCellTypeEnum();
+
+        switch (cellType) {
+            case BLANK:
 //                System.out.print("I'm blank: ");
                 cellContent = "blank";
                 break;
-            case Cell.CELL_TYPE_BOOLEAN:
+            case BOOLEAN:
 //                System.out.print("I'm boolean: ");
                 cellContent = Boolean.toString(cell.getBooleanCellValue());
                 break;
-            case Cell.CELL_TYPE_NUMERIC: // normal number, Date are here
+            case NUMERIC: // normal number, Date are here
                 if (DateUtil.isCellDateFormatted(cell)) {
 //                    System.out.print("I'm date: ");
                     cellContent = new SimpleDateFormat("yyyy-MM-dd").format(cell.getDateCellValue()).toString();
@@ -125,12 +166,13 @@ public class Excel {
                     cellContent = String.valueOf(cell.getNumericCellValue());
                 }
                 break;
-            case Cell.CELL_TYPE_FORMULA:
+            case FORMULA:
 //                System.out.print("I'm formula: ");
-                cell.setCellType(Cell.CELL_TYPE_STRING);
+//                cell.setCellType(Cell.CELL_TYPE_STRING);
+                cell.setCellType(CellType.STRING);
                 cellContent = cell.getStringCellValue();
                 break;
-            case Cell.CELL_TYPE_ERROR:
+            case ERROR:
 //                System.out.print("I'm error: ");
                 cellContent = "error";
                 break;
