@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AutoTestSuite" parallel="tests" thread-count="2">
+<!-- parallel identify the parallel level, which can be tests, classes, methods and some others
+     thread-count relate to parallel, one parallel level, one thread
+ -->
+
+    <listeners>
+        <!--<listener class-name="org.testng.TestListenerAdapter" />-->
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+
+    <test name="250285de">
+        <parameter name="appiumServerPort" value="4723"/>
+        <parameter name="deviceName" value="250285de"/>
+        <parameter name="platformVersion" value="5.0.1"/>
+        <parameter name="platform" value="Android"/>
+        <classes>
+            <class name="com.autotest.cases.TestNGAppHomePage"/>
+        </classes>
+    </test>
+
+    <!--<test name="DU2TAN1576061867">-->
+        <!--<parameter name = "appiumServerPort" value = "4725"/>-->
+        <!--<parameter name = "deviceName" value = "DU2TAN1576061867"/>-->
+        <!--<parameter name = "platformVersion" value = "4.4.2"/>-->
+        <!--<parameter name = "platform" value = "Android"/>-->
+        <!--<classes>-->
+            <!--<class name="com.autotest.cases.TestNGAppLoginPage"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+</suite>

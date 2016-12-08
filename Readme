@@ -1,0 +1,26 @@
+    /**
+     * Appium Multi Device Start Up Parameter
+     * appium -a 127.0.0.1 -p 4725 -bp 4126 -U "DU2TAN1576061867" --device-name "DU2TAN1576061867" --platform-name Android --platform-version 19 --automation-name Appium --log-no-color
+     * appium -a 127.0.0.1 -p 4723 -bp 4125 -U "250285de" --device-name "250285de" --platform-name Android --platform-version 21 --automation-name Appium --log-no-color
+    */
+
+    /**
+     * Selenium hub/node start parameter
+     * ENV: need to set env of drivers that located
+     * hub: java -jar .\selenium-server-standalone-2.53.1.jar -role hub
+     * node: java -jar .\selenium-server-standalone-2.53.1.jar -role node -hub http://127.0.0.1:4444/grid/register -browser browserName="MicrosoftEdge",webdriver.edge.driver="C:\\AutoTestLibraries\\browser_drivers\\MicrosoftWebdriver.exe",platform=WINDOWS
+     * Usage: use linux as hub, and windows as node
+     */
+
+     /**
+     * Common line to run TestNG
+     * 1. need to set CLASSPATH, which contains all jar files' path and project's class(end with .class after compile) folder
+     * 2. then run: java -cp "%CLASSPATH" org.testng.TestNG testng.xml (testng.xml is the testng's xml configuration file)
+     */
+
+     /**
+     * Point of using Maven
+     * 1. Testcase file need to be placed in test folder, otherwise Maven can't detect the dependencies, import of testcase source code will error
+     * 2. Add testng's xml configuration file in pom.xml, using Maven's runner to run it, when you want to run Maven in common line (mvn compile, mvn test...)
+     * 3. When using log4j2 to record, it's configuration log4j2.xml must to be placed in main/java/resources folder
+     */

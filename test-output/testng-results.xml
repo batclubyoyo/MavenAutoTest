@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="AutoTestSuite" duration-ms="29181" started-at="2016-12-08T13:47:55Z" finished-at="2016-12-08T13:48:24Z">
+    <groups>
+    </groups>
+    <test name="250285de" duration-ms="29181" started-at="2016-12-08T13:47:55Z" finished-at="2016-12-08T13:48:24Z">
+      <class name="TestNGAppHomePage">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestNGAppHomePage@63475ace]" name="setUp" is-config="true" duration-ms="6426" started-at="2016-12-08T21:47:55Z" finished-at="2016-12-08T21:48:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="openHome()[pri:0, instance:TestNGAppHomePage@63475ace]" name="openHome" duration-ms="7376" started-at="2016-12-08T21:48:01Z" finished-at="2016-12-08T21:48:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openHome -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestNGAppHomePage@63475ace]" name="tearDown" is-config="true" duration-ms="1153" started-at="2016-12-08T21:48:09Z" finished-at="2016-12-08T21:48:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestNGAppHomePage@63475ace]" name="setUp" is-config="true" duration-ms="5799" started-at="2016-12-08T21:48:10Z" finished-at="2016-12-08T21:48:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="openHome()[pri:0, instance:TestNGAppHomePage@63475ace]" name="openHome" duration-ms="7273" started-at="2016-12-08T21:48:16Z" finished-at="2016-12-08T21:48:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openHome -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestNGAppHomePage@63475ace]" name="tearDown" is-config="true" duration-ms="1143" started-at="2016-12-08T21:48:23Z" finished-at="2016-12-08T21:48:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestNGAppHomePage -->
+    </test> <!-- 250285de -->
+  </suite> <!-- AutoTestSuite -->
+</testng-results>

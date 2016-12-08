@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+    <first usage="db">
+        <second target="ifc" ssh="n">
+            <third info="db_user">test</third>
+            <third info="db_user_pwd">123456</third>
+            <third info="db_host">192.168.1.193</third>
+            <third info="db_port">3306</third>
+            <third info="local_port">3306</third>
+        </second>
+        <second target="bussinessdb" ssh="y">
+            <third info="db_user">bussinessuser</third>
+            <third info="db_user_pwd">b1QSX4esz</third>
+            <third info="db_host">rds30780i1imt4r5ohts.mysql.rds.aliyuncs.com</third>
+            <third info="db_port">3306</third>
+            <third info="ssh_user">root</third>
+            <third info="ssh_user_pwd">test$RFV6tfc</third>
+            <third info="ssh_host">120.25.218.15</third>
+            <third info="ssh_port">22</third>
+            <third info="local_port">3311</third>
+        </second>
+        <second target="webdb" ssh="y">
+            <third info="db_user">webuser</third>
+            <third info="db_user_pwd">w2WSX3edc</third>
+            <third info="db_host">rds30780i1imt4r5ohts.mysql.rds.aliyuncs.com</third>
+            <third info="db_port">3306</third>
+            <third info="ssh_user">root</third>
+            <third info="ssh_user_pwd">test$RFV6tfc</third>
+            <third info="ssh_host">120.25.218.15</third>
+            <third info="ssh_port">22</third>
+            <third info="local_port">3311</third>
+        </second>
+        <second target="walletdb" ssh="y">
+            <third info="db_user">walletuser</third>
+            <third info="db_user_pwd">wdb1QAZ4esz</third>
+            <third info="db_host">rds30780i1imt4r5ohts.mysql.rds.aliyuncs.com</third>
+            <third info="db_port">3306</third>
+            <third info="ssh_user">root</third>
+            <third info="ssh_user_pwd">test$RFV6tfc</third>
+            <third info="ssh_host">120.25.218.15</third>
+            <third info="ssh_port">22</third>
+            <third info="local_port">3311</third>
+        </second>
+    </first>
+
+    <!--Testcase formatted as excel-->
+    <first usage="testcase">
+        <second target="casename">
+            <third info="path"></third>
+        </second>
+        <second target="casename">
+            <third info=""></third>
+        </second>
+    </first>
+
+    <!--Method execute times-->
+    <first usage="cycle">
+        <second target="@test">
+            <third info="repeat">2</third>
+        </second>
+    </first>
+
+    <!--Appium or Browser server address-->
+    <first usage="url">
+        <second target="server">
+            <third info="ip">127.0.0.1</third>
+        </second>
+    </first>
+
+    <!-- For Junit Use. TestNG use testng_multi_appium.xml to parse parameter-->
+    <first usage="appium">
+        <second target="android">
+            <third info="appiumServerPort">4723</third>
+            <third info="deviceName">250285de</third>
+            <third info="platformVersion">5.0.1</third>
+        </second>
+        <second target="android">
+            <third info="appiumServerPort">4725</third>
+            <third info="deviceName">DU2TAN1576061867</third>
+            <third info="platformVersion">4.4.2</third>
+        </second>
+        <second target="ios">
+            <third info="appiumServerPort">4727</third>
+            <third info="deviceName">iphone</third>
+            <third info="platformVersion">10.1</third>
+        </second>
+    </first>
+
+    <!--Annotation use constant value, so xml data is useless-->
+    <first usage="locator">
+        <second target="homepage">
+            <third info="navigator_home">navigator_home</third>
+            <third info="navigator_list">navigator_list</third>
+            <third info="navigator_mine">navigator_mine</third>
+            <third info="message">me_homepage</third>
+            <third info="before_login">login_text_view</third>
+            <third info="after_login">phone_num_view</third>
+        </second>
+        <second target="loginpage">
+            <third info="username">et_username</third>
+            <third info="password">et_password</third>
+            <third info="login">bt_login</third>
+            <third info="register">bt_register</third>
+            <third info="weixin">rel_weixin</third>
+        </second>
+    </first>
+
+    <!--This part is for browser-->
+    <first usage="pc">
+        <second target="web">
+            <third info="browser">ie</third>
+            <third info="key">webdriver.ie.driver</third>
+            <third info="path">C:\\AutoTestLibraries\\browser_drivers\\IEDriverServer.exe</third>
+        </second>
+        <second target="web">
+            <third info="browser">edge</third>
+            <third info="key">webdriver.edge.driver</third>
+            <third info="path">C:\\AutoTestLibraries\\browser_drivers\\MicrosoftWebDriver.exe</third>
+        </second>
+        <second target="web">
+            <third info="browser">chrome</third>
+            <third info="key">webdriver.chrome.driver</third>
+            <third info="path">C:\\AutoTestLibraries\\browser_drivers\\chromedriver.exe</third>
+        </second>
+        <second target="web">
+            <third info="browser">firefox</third>
+            <third info="key">webdriver.firefox.bin</third>
+            <third info="path">C:\\AutoTestLibraries\\browser_drivers\\geckodriver.exe</third>
+        </second>
+    </first>
+
+</root>
+

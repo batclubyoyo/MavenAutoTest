@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BrowserSuite" parallel="tests" thread-count="2">
+<!-- parallel identify the parallel level, which can be tests, classes, methods and some others
+     thread-count relate to parallel, one parallel level, one thread
+ -->
+
+    <listeners>
+        <!--<listener class-name="org.testng.TestListenerAdapter" />-->
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+
+<!--    <test name="ie">
+        <parameter name="platform" value="web"/>
+        <parameter name="browser" value="ie"/>
+        <parameter name="key" value="webdriver.ie.driver"/>
+        <parameter name="path" value="C:\\AutoTestLibraries\\browser_drivers\\IEDriverServer.exe"/>
+        <classes>
+            <class name="com.auto.cases.TestNGBrowserHomePage"/>
+        </classes>
+    </test>
+-->
+    <test name="edge">
+        <parameter name="platform" value="web"/>
+        <parameter name="browser" value="edge"/>
+        <parameter name="key" value="webdriver.edge.driver"/>
+        <parameter name="path" value="C:\\AutoTestLibraries\\browser_drivers\\MicrosoftWebDriver.exe"/>
+        <classes>
+            <class name="com.auto.cases.TestNGBrowserHomePage"/>
+            <!--<class name="com.auto.cases.TestNGBrowserLoginPage"/>-->
+        </classes>
+    </test>
+<!--
+    <test name="chrome">
+        <parameter name="platform" value="web"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="key" value="webdriver.chrome.driver"/>
+        <parameter name="path" value="C:\\AutoTestLibraries\\browser_drivers\\chromedriver.exe"/>
+        <classes>
+            <class name="com.auto.cases.TestNGBrowserHomePage"/>
+        </classes>
+    </test>
+
+    <test name="firefox">
+        <parameter name="platform" value="web"/>
+        <parameter name="browser" value="firefox"/>
+        <parameter name="key" value="webdriver.firefox.bin"/>
+        <parameter name="path" value="C:\\AutoTestLibraries\\browser_drivers\\geckodriver.exe"/>
+        <classes>
+            <class name="com.auto.cases.TestNGBrowserHomePage"/>
+        </classes>
+    </test>
+-->
+</suite>
