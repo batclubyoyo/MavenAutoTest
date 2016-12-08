@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="MavenAutoTest" />
         <module name="testcase" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="MavenAutoTest" target="1.8" />
       <module name="testcase" target="1.8" />
     </bytecodeTargetLevel>
   </component>
