@@ -27,3 +27,41 @@
      */
 
      https://github.com/debugtalk/Fiddler2LRScript.git
+
+     1、loadrunner 录制 https
+     2、loadrunner 录制 mobile app
+     3、loadrunner 主从负载----需要环境（放test环境上吧，15/55两台机）
+     4、appium 主从控制
+
+
+     loadrunner录制https问题解决方式方案候选
+     ===================================================
+     1.设置tools->recording options->port mapping 选择 第三项
+     2.安装安全证书
+     3.设置代理端口
+     =========================================================
+     Loadrunner 录制htpps 协议通过IE打开页面,报错“Internet Explorer cannot display the webpage”.
+     但是直接打开IE不通过 loadrunner打开https页面却可以正常打开。
+
+     问题解决如下(Windows 7)：
+     执行：cmd
+     然后执行命令：certutil -setreg chain\minRSAPubKeyBitLength 512
+     重启电脑，问题解决。
+     ==========================================================
+     如果用loadrunner访问HTTPS网页时出现：shut connection during attempt to negotiate SSL session怎么办？
+
+     　　我是这样解决的：
+
+     　　在vuser_init()中添加："web_set_sockets_option("SSL_VERSION", "TLS");"
+     ============================================================
+     In the Registry change
+     [HKEY_CURRENT_USER/Software/Mercury Interactive/LoadRunner/Protocols/WPlus/SSL/OpenSSL] "ReuseSSLSession" value to 1
+
+
+     如果ATV没有连接上wifi，请接网线，
+     用你的电脑打开ITUNES，开启家庭共享
+     然后你手机上的遥控器就和你ATV在一个局域网，就能控制了
+     你用手机的遥控器，来设置ATV的WIFI网络和密码~~~~
+     最后就能拔掉网线用WIFI啦~~~~
+     remote需要电脑上ITUNES中打开家庭共享
+     然后再ATV中登陆APP ID，最后在同一个局域网中操作
