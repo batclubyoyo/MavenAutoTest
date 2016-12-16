@@ -25,3 +25,5 @@
      * 3. Maven's runner is maven-surefire-plugin, specify it in pom with <build><plugins><plugin> tags, with specification version
      * 4. When using log4j2 to record, it's configuration log4j2.xml must to be placed in main/java/resources folder
      */
+
+     https://github.com/debugtalk/Fiddler2LRScript.git
