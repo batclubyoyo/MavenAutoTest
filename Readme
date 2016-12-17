@@ -28,9 +28,9 @@
 
      https://github.com/debugtalk/Fiddler2LRScript.git
 
-     1、loadrunner 录制 https
+     1、loadrunner 录制 https------XP,IE8，loadrunner11, Port Mapping:WinInet, 录制成功。。。。彻底无语。。。不知道win10+loadrunner12啥问题
      2、loadrunner 录制 mobile app
-     3、loadrunner 主从负载----需要环境（放test环境上吧，15/55两台机）
+     3、loadrunner 主从负载----需要环境（放test环境上吧，15那台机----装完了，但安装过程中有CA和SSL的东西，要确认。装完后启动/连接没问题）
      4、appium 主从控制
 
 
